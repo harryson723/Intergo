@@ -1,0 +1,217 @@
+
+.spaceSection {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    textarea {
+        width: 70%;
+        border-radius: 10px;
+        font-size: 25px;
+    }
+}
+
+.hojaVida {
+    width: 200px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.userImg {
+    width: 160px;
+    height: 160px;
+}
+
+.btnAddJobs,
+.btnEditImg {
+    background-color: transparent;
+    border: none;
+
+    i {
+        font-size: 40px;
+
+        &:active {
+            color: #CCC;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+}
+
+.btnEditImg {
+    i {
+        position: relative;
+        left: 70%;
+        color: #FFF;
+    }
+}
+
+
+.jobs {
+    width: 80%;
+    align-items: flex-start;
+    margin-top: 20px;
+    height: auto;
+}
+
+.jobsInfo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.jobInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px;
+    padding: 0 20px;
+    background-color: #FFF;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    
+    i, span{
+        color: #000;
+        font-size: 25px;
+        margin-left: 20px;
+    }
+}
+
+
+
+.imagen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .btnSaveInfo {
+        margin-left: 30px;
+    }
+
+    .btnEditInfo {
+        border: none;
+        display: flex;
+        padding: 10px 20px;
+        color: #000;
+        background-color: #FFF;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-bottom: 20px;
+
+        &:hover {
+            background-color: #333;
+            color: #FFF;
+            cursor: pointer;
+
+            i {
+                color: #FFF;
+            }
+        }
+
+        i {
+            color: #000;
+            margin: 0 0 0 20px;
+            padding: 0;
+            font-size: 20px;
+        }
+    }
+
+    img {
+        border-radius: 20px;
+    }
+}
+
+.formImg {
+    position: absolute;
+    width: 88%;
+    height: 80%;
+    display: flex;
+    background-color: #00000070;
+    align-items: center;
+    justify-content: center;
+
+    input {
+        color: #FFF;
+        font-size: 30px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.btnHojaVida {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+}
+
+.hojaVida {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        text-align: center;
+    }
+}
+
+.empresas {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    div {
+        width: 70%;
+    }
+}
+
+.skills {
+    max-width: 50%;
+    overflow-y: scroll;
+    max-height: 60%;
+    span {
+        margin: 0;
+        padding: 10px;
+        font-size: 20px;
+    }
+}
+
+.divSkillAdd {
+    display: flex;
+
+    button {
+        margin-left: 20px;
+    }
+}
+
+
+.divBussines {
+    width: 350px;
+    margin-top: 20px;
+    overflow: scroll;
+    max-height: 300px;
+    background-color: #FFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+}

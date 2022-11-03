@@ -1,0 +1,5 @@
+INSERT INTO `tipored`(`idTipoRed`, `nombreTipoRed`) VALUES ('1','twitter');
+INSERT INTO `tipored`(`idTipoRed`, `nombreTipoRed`) VALUES ('2','facebook');
+INSERT INTO `tipored`(`idTipoRed`, `nombreTipoRed`) VALUES ('3','instagram');
+INSERT INTO `tipored`(`idTipoRed`, `nombreTipoRed`) VALUES ('4','linkedin');
+INSERT INTO `tipored`(`idTipoRed`, `nombreTipoRed`) VALUES ('5','youtube');

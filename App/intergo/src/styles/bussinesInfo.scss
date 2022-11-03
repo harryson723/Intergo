@@ -1,0 +1,61 @@
+.infoContactJob {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.divInfoContact {
+    width: 60%;
+}
+
+.jobsPost,
+.infoContact {
+    width: 350px;
+    margin-top: 20px;
+    overflow: scroll;
+    height: 300px;
+    max-height: 300px;
+    background-color: #FFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #000;
+        font-size: 20px;
+    }
+}
+
+.btnAddSocialMedia {
+
+    border: none;
+    background-color: transparent;
+    i {
+        padding: 19px 4px;
+        color: #000;
+        font-size: 30px;
+
+        &:hover {
+            cursor: pointer;
+            color: #FFF;
+        }
+    }
+}
+
+.socialMedia {
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    i {
+        line-height: 40%;
+        margin: 0 10px 0 0;
+        color: #000;
+        &:hover {
+            color: #FFF;
+        }
+    }
+}
+

@@ -1,0 +1,28 @@
+.grid-1-2 {
+    display: grid;
+    grid-template-columns: 8% 90%;
+    height: 100vh;
+}
+
+.spaceMain {
+    background-color: #00000090;
+    background-repeat: no-repeat;
+   
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #00570c54;    
+}
+
+.activeNav {
+    background-color: #000000;
+}
+
+.imgBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}

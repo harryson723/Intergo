@@ -1,0 +1,36 @@
+.formVacante {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    div {
+        padding: 90px 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content:    center;
+        align-items: flex-start;
+        
+        textarea {
+            resize: none;
+        }
+
+         input, textarea {
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 30px;
+            font-size: 25px;
+            padding: 10px 10px ;
+        }
+
+        label {
+            font-size: 30px;
+            color: #FFF;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            margin-left: 10px;
+        }
+
+    }
+}

@@ -1,0 +1,58 @@
+@import "variables";
+
+.conteiner {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../public/img/backgroundLogin.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 25px;
+
+    .conteinerThings {
+        background-color: $backColorForm;
+        width: 40%;
+        height: 90%;
+        margin-left: 10%;
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        overflow-y: scroll;
+        img {
+            margin-top: 40px;
+            width: 70%;
+        }
+    }
+
+    form {
+        margin-top: 60px;
+        width: 80%;
+        display: flex;
+        flex-direction: column; 
+
+        input, select {
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 22px;
+            padding: 10px 15px;
+            box-shadow: 3px 3px 1px #00000040;
+        }
+
+        textarea {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+    }
+
+    .conteinerButton {
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;    
+        }
+    }    
+}
