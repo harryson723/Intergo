@@ -1,6 +1,7 @@
 import React from 'react';
 import "../styles/Modal.css";
 
+
 const Modal = ({ children, isOpen, closeModal }) => {
     const handleModalContainerClick = e => {
         e.stopPropagation();
@@ -8,7 +9,7 @@ const Modal = ({ children, isOpen, closeModal }) => {
     return ( 
         <article className={`modal ${isOpen && "is-open"}`} onClick={closeModal}>
             <div className="modal-container" onClick={handleModalContainerClick}>
-                <button className="modal-close" onClick={closeModal}>X</button>
+                <button className="modal-close" onClick={closeModal}><i className="fa-solid fa-square-xmark"></i></button>
                 {children}
             </div>
         </article>

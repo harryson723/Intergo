@@ -15,7 +15,16 @@ const BussinesSpace = ({ SpaceSection }) => {
         {
             back: "fa-solid fa-briefcase",
             url: `../createJob/${params.NIT}`,
-        }];
+        },
+        {
+            back: "fa-solid fa-circle-user",
+            url: `../students/${params.NIT}`,
+        },
+        {
+            back: "fa-solid fa-circle-arrow-left loguot",
+            url: `/`,
+        },
+    ];
     return (
         <SpaceMain itemMenu={itemMenu} backGrounds={backGrounds} SpaceSection={SpaceSection} />
     );

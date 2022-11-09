@@ -18,6 +18,7 @@ import BussinesAvaible from "./component/BussinesAvaible";
 import LoginAdmin from "./Pages/LoginAdmin";
 import AdminInfo from "./component/AdminInfo";
 import AdminSpace from "./Pages/AdminSpace";
+import BussinesStudents from "./component/BussinesStudents";
 
 function App() {
   return (
@@ -49,6 +50,8 @@ function App() {
                     <Route path="main/:NIT" element={<BussinesSpace SpaceSection={BussinesInfo} />} />
                     <Route path="edit/:NIT" element={<BussinesSpace SpaceSection={BussinesEditInfo} />} />
                     <Route path="createJob/:NIT" element={<BussinesSpace SpaceSection={FormVacantes} />} />
+                    <Route path="students/:NIT" element={<BussinesSpace SpaceSection={BussinesStudents} />} />
+                    <Route path="student/:NIT/:idUser" element={<BussinesSpace SpaceSection={StudentInfo} />} />
                   </Route>
                 </Route>
                 <Route path="/" element={<LoginForm />} />

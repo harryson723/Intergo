@@ -20,7 +20,12 @@ const StudentSpace = ({ SpaceSection }) => {
         {
             back: "fa-solid fa-briefcase",
             url: `../bussiness/${params.idUser}`,
-        }];
+        },
+        {
+            back: "fa-solid fa-circle-arrow-left loguot",
+            url: `/`,
+        },
+    ];
     return (
         <SpaceMain itemMenu={itemMenu} backGrounds={backGrounds} SpaceSection={SpaceSection} />
     );

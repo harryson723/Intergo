@@ -63,6 +63,7 @@ const LoginForm = () => {
                 } else {
                     if (res.length > 0) {
                         if (res[0].contrasena === formInfo.pass) {
+                            setIsStudent(false);
                             navigate(`spaceMain/bussinesSpace/main/${formInfo.user}`);
                         }
                         else alert("error al validar la informacion");
@@ -82,7 +83,7 @@ const LoginForm = () => {
                     <label htmlFor="user">{infoType}</label>
                     <input id="user" name="user" value={formInfo.user} onChange={handleInput} />
                     <label htmlFor="pass">CONTRASEÑA: </label>
-                    <input id="pass" name="pass" value={formInfo.pass} onChange={handleInput} />
+                    <input type="password" id="pass" name="pass" value={formInfo.pass} onChange={handleInput} />
                     <select name="userType" onChange={handleInput}>
                         <option value="estudiante">ESTUDIANTE</option>
                         <option value="empresa">EMPRESA</option>

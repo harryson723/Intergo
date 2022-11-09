@@ -66,6 +66,22 @@ bussinesRouter.put("/updateBussines", (req, res) => {
     }
 });
 
+
+// editar de la empresa
+bussinesRouter.put("/updateBussinesState", (req, res) => {
+    if (req.body) {
+        let {
+            NIT,
+            estado,
+        } = req.body;
+        let query = "UPDATE empresas SET estado=? WHERE NIT = ?";
+        let data = [estado, NIT];
+        updateDB(query, data, res);
+    } else {
+        res.sendStatus(400);
+    }
+});
+
 // crear imagen
 bussinesRouter.put("/editImg", (req, res) => {
     let file = req.files.data;

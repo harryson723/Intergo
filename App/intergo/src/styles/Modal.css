@@ -9,6 +9,8 @@
     display: none;
     justify-content: center;
     align-items: center;
+    transform: scale(0);
+    animation: show .5s ease-out forwards;
 }
 
 .modal.is-open {
@@ -18,8 +20,8 @@
 .modal-container {
     position: relative;
     padding: 1rem;
-    min-width: 320px;
-    max-width: 480px;
+    min-width: 520px;
+    max-width: 780px;
     min-height: 200px;
     max-height: 600;
     overflow-y: auto;
@@ -40,4 +42,27 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+
+}
+
+.modal-close i{
+    font-size: 50px;
+    line-height: 0%;
+    color: black;
+}
+
+.modal-close i:hover {
+    cursor: pointer;
+}
+
+@keyframes show {
+    0% {
+        transform: scale(0.2);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

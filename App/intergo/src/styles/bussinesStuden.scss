@@ -15,4 +15,21 @@
     p {
         background-color: transparent;
     }
+
+    a {
+        margin-left: 20px;
+        transition: all ease-in-out 0.2s;
+        width: 40%;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #00570cd3;
+        margin-bottom: 15px;
+        color: #FFF;
+        text-decoration: none;
+        &:hover {
+            background-color: #003007;
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
 }

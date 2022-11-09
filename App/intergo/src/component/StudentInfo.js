@@ -80,7 +80,7 @@ const StudentInfo = () => {
                 </div>
             </div>
             <div className="imagen">
-                <NavLink to={`../edit/${params.idUser}`} className="btnEditInfo">EDITAR<i className="fa-solid fa-pen-to-square"></i></NavLink>
+               {!params.NIT &&  <NavLink to={`../edit/${params.idUser}`} className="btnEditInfo">EDITAR<i className="fa-solid fa-pen-to-square"></i></NavLink>}
                 <img className="userImg" src={userInfo.foto ? userInfo.foto : "https://api.lorem.space/image/face?w=120&h=120"} alt="Imagen de usuario" />
             </div>
             <div className="empresas">

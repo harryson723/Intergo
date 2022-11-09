@@ -42,16 +42,16 @@ conveniosRouter.post("/insertConvenio", (req, res) => {
 
 });
 
-conveniosRouter.put("/updateStudent", (req, res) => {
+conveniosRouter.put("/updateConvenio", (req, res) => {
     if (req.body) {
         let {
-            idEstudiante,
-            hojaDeVida,
-            descripcion,
-            foto,
+            objeto,
+            fechaInicio,
+            fechaFinal,
+            NIT,
         } = req.body;
-        let query = "UPDATE estudinates SET hojaDevida=?, foto=?, descripcion=? WHERE idEstudiante = ?";
-        let data = [hojaDeVida, foto, descripcion, idEstudiante];
+        let query = "UPDATE convenios SET objeto=?, fechaInicio=?, fechaFinal=? WHERE FK_NIT = ?";
+        let data = [objeto, fechaInicio, fechaFinal, NIT];
         updateDB(query, data, res);
     } else {
         res.sendStatus(400);

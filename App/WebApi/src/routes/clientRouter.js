@@ -21,6 +21,11 @@ clientRouter.get("/getStudent/:codigo", (req, res) => {
     consultDB(`SELECT * FROM estudinates where idEstudiante = ${req.params.codigo}`, res);
 });
 
+// conseguir un estudiante
+clientRouter.get("/getStudentBussines/:vacante", (req, res) => {
+    consultDB(`SELECT e.idEstudiante, e.nombres, e.apellidos, e.correo, v.idVacante, v.nombre FROM estudinates as e, vacantes as v where v.FK_NIT = ${req.params.vacante} and e.FK_idVacante = v.idVacante;`, res);
+});
+
 // insertar clientes en la base de datos
 clientRouter.post("/insertStudent", (req, res) => {
     if (req.body) {
@@ -62,6 +67,20 @@ clientRouter.put("/updateStudent", (req, res) => {
     }
 });
 
+
+clientRouter.put("/updateVacante", (req, res) => {
+    if (req.body) {
+        let {
+            idEstudiante,
+        } = req.body;
+        let query = "UPDATE estudinates SET FK_idVacante=NULL WHERE idEstudiante = ?";
+        let data = [idEstudiante];
+        console.log(idEstudiante);
+        updateDB(query, data, res);
+    } else {
+        res.sendStatus(400);
+    }
+});
 
 // eliminar un cliente
 clientRouter.delete("/deleteStudent/:cedula", (req, res) => {

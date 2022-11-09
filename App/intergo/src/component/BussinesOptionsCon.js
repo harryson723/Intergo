@@ -3,6 +3,7 @@ import UserContext from "../context/UserContext";
 import { helpHttp } from "../helper/helpHttp";
 import useGetInfo from "../hooks/useGetInfo";
 import Loader from "./Loader";
+import "../styles/FormOptions.scss";
 
 const initialForm = {
     codigo: "",
@@ -10,6 +11,8 @@ const initialForm = {
     fechaInicio: "",
     fechaFinal: "",
 }
+
+const states = ["en proceso", "cancelado", "aprobado"];
 
 const BussinesOptionCon = ({ b }) => {
     const { isLoading, setIsLoading } = useContext(UserContext);
@@ -43,40 +46,68 @@ const BussinesOptionCon = ({ b }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        formInfo.NIT = b.NIT;
+        let options = {
+            body: formInfo,
+            headers: {
+                "content-type": "application/json"
+            }
+        };
         if (convenioInfo.codigo) {
-
-        } else {
-            formInfo.NIT = b.NIT;
-            let options = {
-                body: formInfo,
-                headers: {
-                    "content-type": "application/json"
+            let url = `http://localhost:3500/convenios/updateConvenio/`;
+            helpHttp().put(url, options).then((res) => {
+                if (res.status === 512) {
+                } else {
+                    alert("Datos actualizados");
                 }
-            };
+            });
+        } else {
             let url = `http://localhost:3500/convenios/insertConvenio/`;
             helpHttp().post(url, options).then((res) => {
                 if (res.status === 512) {
-                    console.log('HOla');
                 } else {
-
+                    alert("Datos actualizados");
                 }
             });
         }
+    };
+
+    const handelSelect = e => {
+        let options = {
+            body: {
+                NIT: b.NIT,
+                estado: e.target.value,
+            },
+            headers: {
+                "content-type": "application/json"
+            }
+        };
+        let url = `http://localhost:3500/bussines/updateBussinesState/`;
+        helpHttp().put(url, options).then((res) => {
+            if (res.status === 512) {
+            } else {
+
+            }
+        });
 
     };
 
     return (
         <div>
             {isLoading && <Loader />}
-            <form>
+            <form className="formOptions">
                 <label htmlFor="codigo">Codigo: </label>
-                <input name="codigo" id="codigo" value={formInfo.codigo} onChange={handleForm} />
+                <input name="codigo" id="codigo" value={formInfo.codigo} onChange={handleForm} readOnly={convenioInfo.codigo ? "readonly" : false} />
                 <label htmlFor="objeto">OBJETO: </label>
                 <input name="objeto" id="objeto" value={formInfo.objeto} onChange={handleForm} />
                 <label htmlFor="fechaInicio">FECHA INICIO: </label>
                 <input type="date" name="fechaInicio" id="fechaInicio" value={formInfo.fechaInicio} onChange={handleForm} />
                 <label htmlFor="fechaFinal">FECHA FINAL: </label>
                 <input type="date" name="fechaFinal" id="fechaFinal" value={formInfo.fechaFinal} onChange={handleForm} />
+                <label htmlFor="estado">FECHA INICIO: </label>
+                <select name="estado" id="estado" defaultValue={b.estado} onChange={handelSelect} >
+                    {states.map(e => <option value={e} key={e}>{e}</option>)}
+                </select>
                 <input type="submit" value={convenioInfo.codigo ? "ACTUALIZAR" : "CREAR"} onClick={handleSubmit} />
             </form>
         </div>

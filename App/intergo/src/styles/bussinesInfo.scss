@@ -25,6 +25,37 @@
         align-items: center;
         color: #000;
         font-size: 20px;
+        margin: 10px;
+        transition: all ease-in-out 0.2s;
+        font-size: 25px;
+        width: 90%;
+        padding: 13px;
+        background-color: #00570cd3;
+        margin-bottom: 15px;
+        color: #FFF;
+        text-decoration: none;
+        border-radius: 5px;
+        overflow-x: scroll;
+        &:hover {
+            background-color: #003007;
+            transform: scale(1.1);
+            i {
+                cursor: pointer;
+                color: #FFF;
+            }
+
+            button {
+                cursor: pointer;
+            }
+        }
+
+        button {
+            background-color: transparent;
+            font-size: 25px;
+            border: none;
+            text-align: left;
+            color: inherit;
+        }
     }
 }
 
@@ -32,6 +63,7 @@
 
     border: none;
     background-color: transparent;
+
     i {
         padding: 19px 4px;
         color: #000;
@@ -49,13 +81,14 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
     i {
         line-height: 40%;
         margin: 0 10px 0 0;
         color: #000;
+
         &:hover {
             color: #FFF;
         }
     }
 }
-
